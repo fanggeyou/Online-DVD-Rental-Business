@@ -1,65 +1,295 @@
-INSERT INTO plan VALUES(1,'3-at-a-time',17.99,'Up to 3 DVDs at a time');
-INSERT INTO plan VALUES(2,'2-at-a-time',11.99, 'Limit 4 DVDs per month');
+REM REM Membership
+REM
+INSERT INTO Membership(MembershipId,MembershipType,MembershipLimitPerMonth,
+		MembershipMonthlyPrice,MembershipMonthlyTax,MembershipDVDLostPrice) 
+	VALUES(1,'3 DVDs at-a-time',99,17.99,1.79,25.00);
+INSERT INTO Membership(MembershipId,MembershipType,MembershipLimitPerMonth,
+		MembershipMonthlyPrice,MembershipMonthlyTax,MembershipDVDLostPrice) 
+	VALUES(2,'2 DVDs at-a-time',4,11.99,1.19,25.00);
+REM
+REM State
+REM
+INSERT INTO State(StateId,StateName) VALUES (1,'California');
+INSERT INTO State(StateId,StateName) VALUES (2,'Delaware');
+INSERT INTO State(StateId,StateName) VALUES (3,'Florida');
+INSERT INTO State(StateId,StateName) VALUES (4,'Georgia');
+INSERT INTO State(StateId,StateName) VALUES (5,'Iowa');
+INSERT INTO State(StateId,StateName) VALUES (6,'New Jersey');
+INSERT INTO State(StateId,StateName) VALUES (7,'New York');
+INSERT INTO State(StateId,StateName) VALUES (8,'Maryland');
+INSERT INTO State(StateId,StateName) VALUES (9,'Pennsylvania');
+INSERT INTO State(StateId,StateName) VALUES (10,'Texas');
+REM
+REM City
+REM
+INSERT INTO City(CityID,CityName) VALUES (1,'Sacramento');
+INSERT INTO City(CityID,CityName) VALUES (2,'Ewing');
+INSERT INTO City(CityID,CityName) VALUES (3,'New York');
+INSERT INTO City(CityID,CityName) VALUES (4,'Palm Coast');
+INSERT INTO City(CityID,CityName) VALUES (5,'Harrisburg');
+INSERT INTO City(CityID,CityName) VALUES (6,'York');
+INSERT INTO City(CityID,CityName) VALUES (7,'Jacksonville');
+INSERT INTO City(CityID,CityName) VALUES (8,'Atlanta');
+INSERT INTO City(CityID,CityName) VALUES (9,'Washington');
+INSERT INTO City(CityID,CityName) VALUES (10,'Austin');
+INSERT INTO City(CityID,CityName) VALUES (11,'Wilmington');
+INSERT INTO City(CityID,CityName) VALUES (12,'Columbia');
+INSERT INTO City(CityID,CityName) VALUES (13,'Marbury');
+INSERT INTO City(CityID,CityName) VALUES (14,'Los Angeles');
+REM
+REM ZipCode
+REM
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (1,'94203',1,1);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (2,'08628',2,6);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (3,'10001',3,7);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (4,'32035',4,3);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (5,'17100',5,9);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (6,'17400',6,9);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (7,'32099',7,3);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (8,'30029',8,4);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (9,'30673',9,4);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (10,'73301',10,10);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (11,'19850',11,2);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (12,'50057',12,5);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (13,'20658',13,8);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (14,'90080',14,1);
+INSERT INTO ZipCode(ZipCodeId,ZipCode,CityId,StateId) VALUES (15,'90019',14,1);
+REM
+REM Member
+REM
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (1,'Will','Smith','101 Will Street',1,'will.smith@mib.com','W1ll1m!',
+	1,to_date('02/01/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (2,'John','Gore','45 5th Ave',2,'john45@yahoo.com','J0HnGoRe',
+	1,to_date('02/02/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (3,'Mike','Sawicki','10 Penn Blvd',3,'mikesawicki@aol.com','Saw13ki',2,to_date('02/09/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (4,'Ramesh','Mandadi','9 Avelon Apt',4,'ramesh1@yahoo.com','Ram3sh',1,to_date('02/11/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (5,'Frank','Cruthers','1129 Jackson Rd',5,'franky@aol.com','qW1est',2,to_date('02/12/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (6,'Rich','Sentveld','1001 Plainsboro Rd',6,'richard@aol.com','R1chArd',1,to_date('02/12/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (7,'George','Lemon','29456 Upper Ferry Rd',7,'glemon@aol.com','ImG3m0n',2,to_date('02/14/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (8,'Haby','Tanjung','5 River Rd',8,'ht@hasby.com','T1c00l',1,to_date('02/15/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (9,'Cathy','Carol','59 Eaton Twon',9,'carol@hotmail.com','C9thC3ty',2,to_date('02/15/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (10,'Marji','Keho','2365 Merci Blvd',10,'marji.keho@merci.com','M1rjii',1,to_date('02/19/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (11,'Clint','Eastwood','90 Hill Rd',11,'eastwoodc@gmail.com','Clint12',1,to_date('02/19/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+     VALUES (12,'Bruce','Willis','1740 Erford Rd',12,'brucewillis@aol.com','YgDm3n',1,to_date('02/21/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+	VALUES (13,'Yong','Lee','1 Yong-Yong Park',13,'yonglee@lee1.com','Y0ngY0ng',1,to_date('02/28/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+     VALUES (14,'Jerald','Parekh','3434 Campus Rd',14,'jer9439@hotmail.com','C0sm0s',2,to_date('02/29/2004','MM/DD/YYYY'));
+INSERT INTO Member(MemberId,MemberFirstName,MemberLastName,MemberAddress,
+	MemberAddressId,MemberEMail,MemberPassword,MembershipId,MemberSinceDate)
+   VALUES (15,'Kristy','Hanifin','67 Jackob Creek Rd',15,'kristine@aol.com','ImKr1sty',1,to_date('02/29/2004','MM/DD/YYYY'));
+REM
+REM
+REM Payment
+REM
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (1,1,19.78,to_date('02/01/2004','MM/DD/YYYY'),to_date('03/01/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (2,2,19.78,to_date('02/02/2004','MM/DD/YYYY'),to_date('03/02/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (3,3,13.18,to_date('02/09/2004','MM/DD/YYYY'),to_date('03/09/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (4,4,19.98,to_date('02/11/2004','MM/DD/YYYY'),to_date('03/11/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (5,5,13.18,to_date('02/12/2004','MM/DD/YYYY'),to_date('03/12/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (6,6,19.78,to_date('02/12/2004','MM/DD/YYYY'),to_date('03/12/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (7,7,13.18,to_date('02/14/2004','MM/DD/YYYY'),to_date('03/14/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (8,8,19.78,to_date('02/15/2004','MM/DD/YYYY'),to_date('03/15/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (9,9,13.18,to_date('02/15/2004','MM/DD/YYYY'),to_date('03/15/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (10,10,19.78,to_date('02/19/2004','MM/DD/YYYY'),to_date('03/19/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (11,11,19.78,to_date('02/19/2004','MM/DD/YYYY'),to_date('03/19/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (12,12,19.98,to_date('02/21/2004','MM/DD/YYYY'),to_date('03/21/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (13,1,25.00,to_date('02/21/2004','MM/DD/YYYY'),to_date('03/01/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (14,13,19.78,to_date('02/28/2004','MM/DD/YYYY'),to_date('03/28/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (15,14,13.18,to_date('02/29/2004','MM/DD/YYYY'),to_date('03/29/2004','MM/DD/YYYY'));
+INSERT INTO Payment(PaymentId,MemberId,AmountPaid,AmountPaidDate,AmountPaidUntilDate)
+	VALUES (16,15,19.78,to_date('02/29/2004','MM/DD/YYYY'),to_date('03/29/2004','MM/DD/YYYY'));
+REM
+REM Genre
+REM
+INSERT INTO Genre(GenreId,GenreName) VALUES (1,'Action');
+INSERT INTO Genre(GenreId,GenreName) VALUES (2,'Adventure');
+INSERT INTO Genre(GenreId,GenreName) VALUES (3,'Comedy');
+INSERT INTO Genre(GenreId,GenreName) VALUES (4,'Crime');
+INSERT INTO Genre(GenreId,GenreName) VALUES (5,'Drama');
+INSERT INTO Genre(GenreId,GenreName) VALUES (6,'Epics');
+INSERT INTO Genre(GenreId,GenreName) VALUES (7,'Musicals');
+INSERT INTO Genre(GenreId,GenreName) VALUES (8,'Science Fiction');
+INSERT INTO Genre(GenreId,GenreName) VALUES (9,'War'); 
+INSERT INTO Genre(GenreId,GenreName) VALUES (10,'Western'); 
+INSERT INTO Genre(GenreId,GenreName) VALUES (11,'Romance'); 
+INSERT INTO Genre(GenreId,GenreName) VALUES (12,'Horror'); 
+REM
+REM Rating
+REM
+INSERT INTO Rating(RatingId,RatingName,RatingDescription) 
+VALUES (1,'G','General Audiences. All ages admitted.');
+INSERT INTO Rating(RatingId,RatingName,RatingDescription) 
+VALUES (2,'PG','Parental Guidance suggested. Some material
+ may not be suitable for children.');
+INSERT INTO Rating(RatingId,RatingName,RatingDescription) VALUES (3,'PG-13','Parent strongly cautioned. Some material may be inappropriate for children under 13.');
+INSERT INTO Rating(RatingId,RatingName,RatingDescription) VALUES (4,'R','Restricted. Under 17 requires accompanying parent or adult guardian.');
+INSERT INTO Rating(RatingId,RatingName,RatingDescription) VALUES (5,'NC-17','No one 17 and under admitted.');
+REM
+REM Role
+REM
+INSERT INTO Role(RoleId,RoleName) VALUES (1,'Actor');
+INSERT INTO Role(RoleId,RoleName) VALUES (2,'Actoress');
+INSERT INTO Role(RoleId,RoleName) VALUES (3,'Director');
+INSERT INTO Role(RoleId,RoleName) VALUES (4,'Producer');
+INSERT INTO Role(RoleId,RoleName) VALUES (5,'Screenwriter');
+REM
+REM MoviePerson
+REM
+REM 
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (1,'Bill','Murry',to_date('09/21/1950','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (2,'Steven','Spielberg',to_date('12/18/1946','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (3,'Tom','Hanks',to_date('07/09/1956','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (4,'Leonardo','DiCaprio',to_date('11/11/1974','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonInitial,PersonDateOfBirth)
+	VALUES (5,'Night','Shyamalan','M',to_date('08/06/1970','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (6,'Bruce','Willis',to_date('03/19/1955','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (7,'Catherine','Zeta-Zones',to_date('09/20/1969','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (8,'Clint','Eastwood',to_date('05/31/1930','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (9,'Sean','Penn',to_date('08/17/1960','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (10,'Kevin','Bacon',to_date('06/29/1958','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (11,'Irvin','Kreshner',to_date('04/29/1923','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (12,'Sean','Connery',to_date('09/25/1930','MM/DD/YYYY'));
+INSERT INTO MoviePerson(PersonId,PersonFirstName,PersonLastName,PersonDateOfBirth)
+	VALUES (13,'Kim','Basinger',to_date('12/08/1953','MM/DD/YYYY'));
+REM
+REM DVD
+REM
+INSERT INTO DVD(DVDId,DVDTitle,GenreId,RatingId,DVDReleaseDate,
+		TheaterReleaseDate,DVDQuantityOnHand,DVDQuantityOnRent,DVDLostQuantity)
+	VALUES (1,'Groundhog Day',3,2,to_date('01/22/2002','MM/DD/YYYY'),
+		to_date('01/22/2001','MM/DD/YYYY'),9,0,1);
+INSERT INTO DVD(DVDId,DVDTitle,GenreId,RatingId,DVDReleaseDate,
+		TheaterReleaseDate,DVDQuantityOnHand,DVDQuantityOnRent,DVDLostQuantity)
+	VALUES (2,'The Terminal',5,2,to_date('11/23/2003','MM/DD/YYYY'),
+		to_date('01/22/2003','MM/DD/YYYY'),9,1,0);
+INSERT INTO DVD(DVDId,DVDTitle,GenreId,RatingId,DVDReleaseDate,
+		TheaterReleaseDate,DVDQuantityOnHand,DVDQuantityOnRent,DVDLostQuantity)
+	VALUES (3,'Catch Me If You Can',5,3,to_date('05/06/2003','MM/DD/YYYY'),
+		to_date('01/04/2002','MM/DD/YYYY'),10,0,0);
+INSERT INTO DVD(DVDId,DVDTitle,GenreId,RatingId,DVDReleaseDate,
+		TheaterReleaseDate,DVDQuantityOnHand,DVDQuantityOnRent,DVDLostQuantity)
+	VALUES (4,'The Sixth Sense',12,4,to_date('03/28/2000','MM/DD/YYYY'),
+		to_date('05/01/1999','MM/DD/YYYY'),9,1,0);
+INSERT INTO DVD(DVDId,DVDTitle,GenreId,RatingId,DVDReleaseDate,
+		TheaterReleaseDate,DVDQuantityOnHand,DVDQuantityOnRent,DVDLostQuantity)
+	VALUES (5,'Pale Rider',10,4,to_date('11/19/1997','MM/DD/YYYY'),
+		to_date('11/15/1985','MM/DD/YYYY'),0,1,0);
+INSERT INTO DVD(DVDId,DVDTitle,GenreId,RatingId,DVDReleaseDate,
+		TheaterReleaseDate,DVDQuantityOnHand,DVDQuantityOnRent,DVDLostQuantity)
+	VALUES (6,'Mystic River',5,4,to_date('01/08/2004','MM/DD/YYYY'),
+		to_date('05/08/2003','MM/DD/YYYY'),10,0,0);
+INSERT INTO DVD(DVDId,DVDTitle,GenreId,RatingId,DVDReleaseDate,
+		TheaterReleaseDate,DVDQuantityOnHand,DVDQuantityOnRent,DVDLostQuantity)
+	VALUES (7,'Never Say Never Again',1,1,to_date('10/17/2000','MM/DD/YYYY'),
+		to_date('05/08/1983','MM/DD/YYYY'),10,0,0);
+REM
+REM DVD
+REM
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(1,1,1);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(2,3,2);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(2,3,3);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(3,1,2);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(3,1,3);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(4,1,3);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(5,3,4);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(5,1,4);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(5,4,4);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(6,1,4);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(7,2,2);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(8,1,5);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(8,3,5);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(8,4,5);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(8,3,6);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(8,4,6);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(9,1,6);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(10,1,6);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(11,3,7);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(12,1,7);
+INSERT INTO MoviePersonRole(PersonId,RoleId,DVDId) VALUES(13,2,7);
+REM
+REM Rental
+REM
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,
+	RentalShippedDate,RentalReturnedDate)
+ VALUES (1,1,4,to_date('02/02/2004','MM/DD/YYYY'),
+	to_date('02/02/2004','MM/DD/YYYY'),to_date('02/09/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,
+	RentalShippedDate,RentalReturnedDate)
+ VALUES (2,1,6,to_date('02/02/2004','MM/DD/YYYY'),
+	to_date('02/02/2004','MM/DD/YYYY'),to_date('02/09/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,RentalShippedDate,RentalReturnedDate)
+ VALUES (3,1,3,to_date('02/02/2004','MM/DD/YYYY'),to_date('02/02/2004','MM/DD/YYYY'),to_date('02/09/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,RentalShippedDate)
+ VALUES (4,5,4,to_date('02/15/2004','MM/DD/YYYY'),to_date('02/15/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,RentalShippedDate)
+ VALUES (5,5,5,to_date('02/15/2004','MM/DD/YYYY'),to_date('02/15/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,RentalShippedDate,RentalReturnedDate)
+ VALUES (6,15,1,to_date('02/12/2004','MM/DD/YYYY'),to_date('02/12/2004','MM/DD/YYYY'),to_date('02/21/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,RentalShippedDate)
+ VALUES (7,9,2,to_date('02/19/2004','MM/DD/YYYY'),to_date('02/19/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,RentalShippedDate)
+ VALUES (8,8,2,to_date('02/20/2004','MM/DD/YYYY'),to_date('02/21/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate,RentalShippedDate)
+ VALUES (9,1,4,to_date('02/20/2004','MM/DD/YYYY'),to_date('02/20/2004','MM/DD/YYYY'));
+INSERT INTO Rental(RentalId,MemberId,DVDId,RentalRequestDate)
+ VALUES (10,15,7,to_date('02/29/2004','MM/DD/YYYY'));
+REM
+REM Rental
+REM
+INSERT INTO RentalQueue(MemberId,DVDId,DateAddedInQueue)
+ VALUES (12,5,to_date('02/22/2004','MM/DD/YYYY'));
 
-
-INSERT INTO customers VALUES(1,'John','Smith',1,'jsmith41','smith@gmail.com',NULL,NULL,1234567654321,222);
-INSERT INTO customers VALUES(2,'Lily','Colin',1,'12lilycolin','colin@gmail.com',NULL,NULL,344522345521,444);
-INSERT INTO customers
-VALUES(3,'Lauren','Kim',NULL,'778kim','lkim@gmail.com',NULL,NULL,2334322188392231,234);
-INSERT INTO customers
-VALUES(4,'Kelly','Peterson',NULL,'peterson77','kkp@gmail.com',NULL,NULL,2330000188300231,111);
-
-
-INSERT INTO movie VALUES(1,'X-Men: Days of Future Past',CAST('18-DEC-2015' AS DATE),'Action movie');
-INSERT INTO movie VALUES(2,'The Angry Birds Movie',CAST('11-DEC-2016' AS DATE),'Cartoon');
-INSERT INTO movie VALUES(3,'Star Wars: Episode 3 - Revenge of the Sith',CAST('20-OCT-2005' AS DATE),'Action movie');
-INSERT INTO movie VALUES(4,'A Matter of Faith',CAST('25-JAN-2014' AS DATE),'Story-telling');
-INSERT INTO movie VALUES(5,'Star Trek Into Darkness',CAST('16-MAY-2013' AS DATE),'Action movie');
-INSERT INTO movie VALUES(6,'Dredd',CAST('12-SEP-2012' AS DATE),'Science fiction movie');
-INSERT INTO movie VALUES(7,'The Martian',CAST('2-OCT-2015' AS DATE),'Science fiction movie');
-
-
-INSERT INTO Queue
-VALUES (2,1,1,CAST('30-MAY-2016' AS DATE));
-INSERT INTO Queue
-VALUES (3,1,2,CAST('30-OCT-2016' AS DATE));
-INSERT INTO Queue
-VALUES (4,1,3,CAST('15-AUG-2017' AS DATE));
-
-
-INSERT INTO directors VALUES(1,'George','Lucas');
-INSERT INTO directors VALUES(2,'Rich','Christiano');
-
-INSERT INTO direct_movie VALUES(1,3);
-INSERT INTO direct_movie VALUES(2,4);
-
-INSERT INTO delivery_services VALUES(1,'UPS');
-
-
-INSERT INTO department VALUES(1,'Transaction Process');
-
-
-INSERT INTO employee VALUES(1,'Kelly','Kim',1,'kkim@gmail.com',6667896230);
-
-
-INSERT INTO rental_transactions VALUES(1,2,1,CAST('25-JAN-2017' AS DATE),2231332114,1);
-
-
-INSERT INTO dvd_distributor VALUES(1,'PK DVD Distributor','pkdist@gmail.com',7656782521);
-
-
-INSERT INTO DVD VALUES(1,1,20,1);
-INSERT INTO DVD VALUES(2,2,15,1);
-INSERT INTO DVD VALUES(3,3,20,1);
-INSERT INTO DVD VALUES(4,4,22,1);
-INSERT INTO DVD VALUES(5,5,10,1);
-INSERT INTO DVD VALUES(6,6,8,1);
-INSERT INTO DVD VALUES(7,7,0,1);
-
-
-
-INSERT INTO DVD_Rent VALUES(3,1);
-INSERT INTO DVD_Rent VALUES(4,1);
-
-
-commit;
+COMMIT;
