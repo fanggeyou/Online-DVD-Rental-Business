@@ -1,6 +1,5 @@
--- Assignment 2.0
--- Part B
--- Q1 --
+
+--Q1--
 CREATE MATERIALIZED VIEW Similar_DVD
 REFRESH FORCE  -- review refresh increment
 START WITH SYSDATE NEXT SYSDATE+1
