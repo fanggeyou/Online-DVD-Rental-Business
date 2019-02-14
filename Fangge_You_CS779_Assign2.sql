@@ -1,5 +1,4 @@
---Assignment 2.1
---Q1--
+
 CREATE TABLE History(
 HistoryId	NUMBER(10)	NOT NULL,
 DVDID	NUMBER(16)	NOT NULL,
@@ -30,7 +29,7 @@ ALTER TABLE History ADD ChangeTime DATE;
 
 SELECT * FROM History;
 
---Q2--
+----
 CREATE OR REPLACE TRIGGER no_delete_history_trg
 BEFORE DELETE ON History
 BEGIN
@@ -45,7 +44,7 @@ VALUES(1,4,1,5,1,1,to_date('02/02/2004','MM/DD/YYYY'),
 DELETE FROM history WHERE dvdid = 4;
 UPDATE history SET changeType = 'INSERT', changetime = SYSDATE WHERE historyid = 1;
 
---Q3--
+----
 CREATE OR REPLACE TRIGGER update_shipdate_trg
 AFTER UPDATE OF rentalshippeddate, copyid ON Rental
 FOR EACH ROW
@@ -68,7 +67,7 @@ WHERE rentalid = 10;
 SELECT * FROM history;
 
 
---Q4--
+----
 CREATE OR REPLACE TRIGGER update_returndate_trg
 AFTER UPDATE OF rentalreturneddate ON Rental
 FOR EACH ROW
@@ -91,7 +90,7 @@ SELECT * FROM history;
 
 
 
---Q5--
+----
 CREATE OR REPLACE TRIGGER no_more_movie_trg
 BEFORE UPDATE OF rentalshippeddate ON Rental
 FOR EACH ROW
@@ -132,7 +131,7 @@ UPDATE rental SET rentalshippeddate = to_date('03/10/2004','MM/DD/YYYY')
 WHERE rentalid = 13;
 
 
---Q6--
+----
 ALTER TABLE rentalqueue ADD queuerank NUMBER(10);
 
 CREATE OR REPLACE PROCEDURE ADD_QUEUE (
@@ -177,7 +176,7 @@ SELECT * FROM rentalqueue;
 
 
 
---Q7--
+----
 CREATE OR REPLACE PROCEDURE REMOVE_QUEUE (
 m_id_arg IN NUMBER,
 d_id_arg IN NUMBER,
